@@ -1,0 +1,76 @@
+
+Call for Presentations
+
+3rd Languages, Architectures, and Tools for Heterogeneous Computing (LATHC) Workshop
+
+Colocated with the IEEE/ACM International Symposium on Code Generation and Optimization (CGO)
+
+Las Vegas, NV, USA
+March 1st, 2025 (Tentative)
+
+The goal of the Languages, Architectures, and Tools for Heterogeneous
+Computing (LATHC) Workshop is to gather researchers and developers to
+present and discuss recent developments in knowledge and technology
+that supports heterogeneous computing systems. This one-day workshop
+invites presentation of relevant recent proposals, technology, system
+evaluation, design concepts, and other developments that are expected
+to have an impact in the performance, usability, availability, design cycle,
+power consumption or other aspects of heterogeneous system.
+
+LATHC seeks to feature recent and relevant results, but it does not
+require that the content presented be original or unpublished. Thus,
+when considering submitting an abstract for a talk, think about your
+most relevant recent work. LATHC does not publish proceedings and does
+not requires the submission of manuscripts. LATHC expects you to
+contribute the slides that you use for your presentation so that they
+can be publicly shared in the workshop webpage soon after the
+workshop.
+
+The topics covered in the workshop include, but are not limited to,
+the following aspects of heterogeneous computing:
+
+* Programming Models and Programming Languages
+* Programming Frameworks
+* Compiler Design and Implementation
+* Intermediate Representations
+* Software Stack
+* Code Optimization
+* Code Generation
+* Software Development
+* System Architecture
+* Processor Architecture
+* Accelerator Architecture
+* Scheduling
+* Computation and Data Distribution
+* Energy consumption management
+* Performance evaluation
+* Benchmarking
+
+Please submit the following to be considered for a presentation at LATHC:
+
+* Presentation Title
+* Authors
+* Presenting Author
+* Abstract
+* Brief Biography of Presenting Author
+
+Organizing Committee:
+
+J. Nelson Amaral - University of Alberta (co-chair)
+Yaoqing Gao - Huawei Canada (co-chair)
+
+Tarek Abdelrahman - University of Toronto
+Samer AlKiswany - University of Waterloo
+Reza Azimi - Huawei Canada
+Zhenman Fang - Simon Fraser University
+Alfredo Goldman - University of Sao Paulo
+Gennady Pekhimenko - University of Toronto
+Fernando Quintao Pereira - Universidade Federal de Minas Gerais
+Arrvindh Shriraman - Simon Fraser University
+Kai Ting Wang (Amy) - Huawei Canada
+Jingling Xue - University of New South Wales (UNSW)
+Michael O'Boyle - The University of Edinburgh
+
+
+
+

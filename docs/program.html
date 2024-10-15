@@ -1,0 +1,130 @@
+---
+title: CDP Program
+---
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+<h1>Program</h1>
+
+	<h2>TBD</h2>
+<!---	
+	<h2> 02 March 2024</h2><br>
+	<h4>Room: TBD</h4>
+	
+<table class="program"><tbody>
+    <tr>
+      <td><b>Session 1:</b></td> <td> Chair: <b>J. Nelson Amaral</b> &#8212; University of Alberta, Canada<td>
+    </tr>
+    
+    <tr>
+      <td> 1:20 - 1:50 </td> <td><a href="#C2TACO">C2TACO: Lifting Tensor Code to TACO</a>  &#8212; 	José Wesley De Souza Magalhães, Jackson Woodruff, Elizabeth Polgreen and Michael F. P. O'Boyle</td>
+    </tr>
+    <tr>
+      <td>1:50 - 2:20</td> <td> <a href="#INTERPOLATION">Scalar Interpolation to Balance Processor Resource Utilization</a>  &#8212; Henry Kao, Reza Ghanbari, Jo&atilde;o Paulo Labegalini de Carvalho, Ehsan Amiri and J. Nelson Amaral</td>
+    </tr>
+    <tr>
+      <td>2:20 - 2:50</td> <td> <a href="#HET-ISA">Re-thinking Heterogeneous-ISA Compilers for Platforms with Inter-ISA Shared Memory</a>  &#8212; Antonio Barbalace</td>
+    </tr>
+    <tr>
+      <td>2:50 - 3:20</td> <td> <a href="#PYTHON">Automatic Generation of Python Programs Using Context Free Grammars</a>  &#8212; Kamel Yamani, Marwa Naïr and Riyadh Baghdadi</td>
+    </tr>
+
+    <tr>
+      <td>3:20-3:40</td> <td><b>Nutrition Break</b></td>
+    </tr>
+
+    <tr>
+      <td><b>Session 2:</b></td> <td> Chair: <b>Yaoqing Gao</b>, Huawei Canada<td>
+    </tr>
+    
+    <tr>
+      <td>3:40 - 4:10</td> <td> <a href="#STUBFOLDING">Increasing the Efficiency of Polymorphic Inline Caches Through Stub Folding While Retaining Type Specialization</a>  &#8212; Nathan Henderson, Iain Ireland, Matthew Gaudet, Joao Paulo Labegalini de Carvalho and Jose Nelson Amaral</td>
+    </tr>
+    <tr>
+      <td>4:10 - 4:50</td> <td> <a href="#ACPO">Using ML to improve compiler optimizations with ACPO</a>  &#8212; Tomasz Czajkowski, Amir Ashouri, Muhammad Asif Manzoor, Duc Minh Vu and Yaoqing Gao</td>
+    </tr>
+    <tr>
+      <td>4:50 - 5:20</td> <td> <a href="#MIZAR">Mizar: The Compilation Toolchain that greatly improves the efficiency of the DPU data-plane development</a>  &#8212; Yongnian Le, Debiao Qin, Ehsan Amiri, Wei Wei, Hanbing Huang and Liangxu Gong</td>
+    </tr>
+  </table>
+ 
+
+  <p><a name="C2TACO"><td><b>C2TACO: Lifting Tensor Code to TACO</b>  </a> <br>
+    José Wesley De Souza Magalhães, Jackson Woodruff, Elizabeth Polgreen and Michael F. P. O'Boyle</br></p>
+
+    <p> <b>Abstract:</b>	Domain-specific languages (DSLs) promise a significant performance and portability advantage over traditional languages. DSLs are designed to be high-level and platform-independent, allowing an optimizing compiler significant leeway when targeting a particular device. Such languages are particularly popular with emerging tensor algebra workloads. However, DSLs present their own challenge: they require programmers to learn new programming languages and put in significant effort to migrate legacy code. We present C2TACO, a synthesis tool for synthesizing TACO, a well-known tensor DSL, from C code. We develop a guided enumerative synthesizer that uses automatically generated IO examples and source-code analysis to efficiently generate dense tensor algebra code. C2TACO is able to synthesize 95% benchmarks from a tensor benchmark suite, outperforming an alternative neural machine translation technique, and demonstrates substantially higher levels of accuracy when evaluated against two state-of-the-art existing schemes, TF-Coder and ChatGPT. Our synthesized TACO programs are, by design, portable achieving significant performance improvement when evaluated on a multi-core and GPU platform.</p>
+
+  <p><a name="INTERPOLATION"><td><b>Scalar Interpolation to Balance Processor Resource Utilization</b>  </a> <br>
+    Henry Kao, Reza Ghanbari, Jo&atilde;o Paulo Labegalini de Carvalho, Ehsan Amiri and J. Nelson Amaral</br></p>
+
+  <p><b>Abstract:</b> The efficient use of processor resources plays a critical role in modern computing systems, however, it comes with its own set of challenges. One challenge is the underuse/starvation of certain resources causing low instruction throughput. Another challenge is overuse of certain resources, which can lead to processor stalls or contention, causing delays and similarly, decreased throughput – both resulting in reduced performance and efficiency. Moreover, modern processors are typically implemented so that different resources are specialized to different data/instruction types, an example being separate register files and compute pipelines for scalar and vector processing. This also adds complexity in organizing fair utilization amongst different processor components. One traditional code optimization we noticed that is victim to the aforementioned pain points is compiler automatic vectorization, which transforms scalar code into vector code to extract more instruction and data level parallelism. Although it is proven to provide significant performance improvements, we observe that it can cause overuse contention the processors vector resources, while the scalar resource go mostly idle. We propose a novel optimization called Scalar Interpolation, where functionally equivalent scalar code is interleaved within vectorized code in order to reduce pressure on the vector resources, while offloading work to the previously idle scalar resources, thus balancing the utilization across different processor resources. Scalar Interpolation shows upwards of ~30% speedup on program kernels and full real world applications compared to current compiler automatic vectorization techniques.</p>
+    
+  <p><a name="HET-ISA"><td><b>Re-thinking Heterogeneous-ISA Compilers for Platforms with Inter-ISA Shared Memory</b>  </a> <br>
+Antonio Barbalace</br></p>
+
+  <p><b>Abstract: </b> Shared memory among heterogeneous processing units proved to be fundamental to simplify programming (and reduce overheads) by reusing the same pointers among diverse processing units. This has been backed by multiple hardware innovations including NVIDIA UVA, AMD HSA, CCIX, etc. and it is going to be more and more pervasive with upcoming CXL technology -- which will extend coherent shared memory amongst multiple and diverse CPUs and accelerators in the data center.</p>
+
+<p>Despite such hardware innovations, the way we compile programs for heterogeneous-ISA processing units hasn't changed since decades: a program is split into parts, each part runs on a different ISA and it is compiled by a different compiler. The parts that are not to be run on the host (usually, math kernels), are offloaded by the host CPU to an accelerator (characterized by a diverse ISA).</p>
+
+<p>While this is the state of the practice, emerging platforms for the data center will likely integrate multiple and diverse accelerators – that potentially enables a program to use them all, which is not possible at the moment, at the same time, CPU(s) and accelerators will all access a shared memory space – but data maybe in different formats and cannot be directly read/written. Moreover, we will witness the introduction of new architectures, such as in memory near data processing.</p>
+
+<p>This talk questions the way we build compilers for heterogeneous-ISA today, but also classic (static partitioning) offloading as the sole solution for execution migration among heterogeneous-ISA processing units. Hence, the talk discusses and proposes alternatives to the state of the practice, which require no code modifications nor restrict what part of the code runs where, and presents a vision for (future) compilers targeting heterogeneous-ISA platforms with pervasive shared memory.</p>
+
+  <p><a name="PYTHON"><td><b>Automatic Generation of Python Programs Using Context Free Grammars</b>  </a> <br>
+Kamel Yamani, Marwa Naïr and Riyadh Baghdadi</br></p>
+
+  <p><b>Abstract:</b> In recent years, data has emerged as the new gold, serving as a powerful tool for creating intelligent systems. However, procuring high-quality data remains challenging, especially for code. To address this, we developed a tool that generates random Python programs using a context-free grammar. The generated programs are guaranteed to be correct by construction. Our system uses custom production rules (in the Backus-Naur Form (BNF) format) to recursively generate code. This allows us to generate code with different levels of complexity, ranging from code containing only assignments to more complex code containing conditionals and loops. Our proposed tool enables effortless large-scale Python code generation, beneficial for a wide range of applications. This tool is particularly useful in the field of machine learning, where it can generate substantial amounts of Python code for training Python language models. Additionally, researchers who are studying programming languages can utilize this tool to create datasets for their experiments, which can help validate the robustness of code interpreters or compilers. Unlike existing research, we have open-sourced our implementation. This allows customization according to user needs and extends potential usage to other languages.</p>
+      
+  <p><a name="STUBFOLDING"><td><b>Increasing the Efficiency of Polymorphic Inline Caches Through Stub Folding While Retaining Type Specialization</b>  </a> <br>
+Nathan Henderson, Iain Ireland, Matthew Gaudet, Joao Paulo Labegalini de Carvalho and Jose Nelson Amaral</br></p>
+
+  <p><b>Abstract:</b> Dynamically typed languages running on Virtual Machines (VMs)
+are commonly used, but the lack of explicit type information poses
+a challenge to producing efficient code. In general, without type
+annotations, it is impossible to statically infer an object’s type to
+determine which methods to invoke or how properties are accessed.
+Inline caches (ICs) are a widely adopted technique to improve the
+performance of dynamically typed languages. ICs store machine
+code stubs at the bytecode level to enable fast-path execution for
+previously seen types. However, highly polymorphic sites require
+a large number of fast paths, leading to more frequent code generation
+and a higher runtime cost to select the correct fast path
+for an incoming type. Therefore, implementations often set a limit
+on the number of IC fast paths for a bytecode. Once this limit is
+reached, type-specialized fast paths are forgotten and instead, the
+IC executes a type-generic routine. This work introduces Stub Folding,
+a technique that increases the efficiency of highly polymorphic
+ICs. Stub Folding allows certain ICs to retain type-specialized fast
+paths that would otherwise be lost, enabling higher code coverage
+for compiler optimizations and accelerating lower execution
+tiers. An implementation of Stub Folding in the SpiderMonkey
+JavaScript engine achieves up to 25% improvement on complex
+applications within the JetStream 2.1 benchmark suite compared
+to SpiderMonkey’s previous approach. This work also explores
+techniques inspired by hardware caching policies, namely Least
+Recently Used (LRU) and Least Frequently Used (LFU) replacement
+policies. An evaluation indicates that LRU and LFU policies accelerate
+some programs but do not reliably increase program efficiency
+across a range of benchmarks.</p>
+
+  <p><a name="ACPO"><td><b>Using ML to improve compiler optimizations with ACPO</b>  </a> <br>
+Tomasz Czajkowski, Amir Ashouri, Muhammad Asif Manzoor, Duc Minh Vu and Yaoqing Gao</br></p>
+
+  <p><b>Abstract:</b> Machine Learning (ML) has shown to be an effective tool in approximating complex cost functions in many domains, including program compilation. The appeal of ML is the data-driven nature that results in a functioning and useful model that can be adapted to many different applications and scenarios.
+
+In this talk we present an AI-Enabled Continous Program Optimization (ACPO) framework that makes it easy to incorporate ML models and frameworks into the LLVM compiler flow, for easy tuning and optimization of profitability functions. This framework comprises libraries of feature collectors, abstract model representation, and ML framework interfaces that work together to provide benefits for compiler optimizations. We will describe each component of the framework and then show on examples of inlining and unrolling how models were created and applied to LLVM 15 compiler. We will then show
+how the framework can be easily extended to support new frameworks and how the existing framework is leveraged for training data generation in a compiler context.</p>
+
+  <p><a name="MIZAR"><td><b>Mizar: The Compilation Toolchain that greatly improves the efficiency of the DPU data-plane development</b>  </a> <br>
+Yongnian Le, Debiao Qin, Ehsan Amiri, Wei Wei, Hanbing Huang and Liangxu Gong</br></p>
+
+  <p><b>Abstract:</b> In contemporary CPU-centric computing architectures, the CPU is responsible for multiple responsibilities such as computing, moving data, and controlling the execution process. With the continuous increase of network traffic and computing power requirements, the CPU-centric computing architecture cannot meet the performance requirements of actual applications. In the future, the computing architecture will gradually evolve to a DPU-centric computing architecture. The DPU chip is logically divided into the data-plane, interface-plane, and control-plane. The data-plane is responsible for inline acceleration logic such as high-speed data packet processing, virtualization protocol offloading, security encryption and decryption, traffic compression and decompression, and operator acceleration. As more and more network protocols and scenario-based customization requirements need to be supported, ASIC network chips cannot quickly meet user requirements. Instead, DPU customers expect to use the universal programmability of the DPU data-plane to quickly implement business innovation. In the industry, Intel's Tofino series, NVIDIA BlueField series, and Alibaba's Shenlong series all are equipped with corresponding programming interfaces and compilation toolchain to help users implement universal programmability of the data-plane and improve development efficiency.
+In addition to common compilers such as GCC and LLVM, compilation toolchain usually includes a complete set of development tools related to application compilation. Compiler toolchain is not only responsible for translating applications into architecture-dependent machine code, but also directly affect the overall development efficiency of a project. This presentation focuses on the domain of DPU data-plane programmability and related pain points during development, and explores the compilation toolchain technology and solution for such heterogeneous chip programming. The solution with Huawei-developed DPU chip also provides programming interfaces to implement programmability of the DPU data plane. However, the current development efficiency cannot meet customer requirements due to the following reasons: (1) The programming logic abstraction is not enough. 2) The capability of optimization and resource management tools is insufficient. 3) The debugging and tuning tools are insufficient. In this presentation, our compiler team describes how we have effectively improved the development efficiency of the DPU data plane by 60%. That is, based on the analysis of the current state of DPU data plane programming, we use program analysis technology to extend programming interfaces such as syntax and APIs. This solution effectively resolves pain points in the development process from multiple dimensions, such as design and coding, performance analysis, resource management, and debugging. The value and innovation of our work are as follows: (1) The compilation tool solution covers all development phases from end to end, and systematically analyzes and resolves pain points in the development process of the DPU data plane. (2) Innovative heterogeneous memory programming interface and static resource management allocation scheme; (3) A series of compilation tools based on hardware capabilities enhance the optimization capability and debugability, effectively improving the development efficiency of the DPU data-plane.</p>
+---> 
+      </div> <!-- /.col-lg-12 -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+</section>
+

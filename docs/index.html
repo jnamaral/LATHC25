@@ -1,0 +1,94 @@
+---
+title:  3rd Languages, Architectures, and Tools for Heterogeneous Computing (LATHC) Workshop 2025
+banner-image-list:
+    - url: img/Edinburgh-Street1.webp
+    - url: img/Edinburgh-Street2.jpg
+    - url: img/EdinburghUniversity.jpeg
+    - url: img/HolyroodPalace.jpeg
+---
+
+<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/css/lightslider.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js" defer></script>
+<script src="{{ site.baseurl }}/js/lightsliderrun.js" defer></script>
+
+<div style="padding-bottom:0;" class="jumbotron">
+  <div class="container">
+    <ul id="lightSlider">
+      {% for image in page.banner-image-list %}
+      <li style="overflow:hidden">
+        <div style="height:auto; display:flex; align-item:center;">
+          <img style="width:100%; height:auto; align-self: center;" src="{{ image.url }}">
+        </div>
+      </li>
+      {% endfor %}
+      {% for image in site.static_files %}
+      {% if image.path contains 'img/banner/' %}
+      <li>
+        <img src="{{ site.baseurl }}{{ image.path }}">
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<section class="no-top-padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="section-heading" style="margin-bottom:.2em;">
+          3rd Languages, Architectures, and Tools for Heterogeneous Computing (LATHC) Workshop 2025 
+        </h1>
+	<p class="lead section-lead"><b>Room: TBD<br>
+	In conjunction with <a href="https://conf.researchr.org/home/cgo-2025">IEEE/ACM International Symposium on Code Generation and Optimization (CGO)</a>, Las Vegas, NV, USA</b></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel panel-default">
+
+	<div class="panel-heading"><b>Important Dates</b></div>
+
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><!--<s>-->Abstract Submission<!--</s>--></td><td>January 06 2025</td>
+              </tr>
+              <tr>
+                <td>Notification</td><td>January 20 2025</td>
+	      </tr>
+              <tr>
+                <td>Workshop Date</td><td>Saturday, March 02</td>
+	      </tr>
+
+	      
+            </tbody>
+          </table>
+        </div> <!-- /.panel -->
+      </div> <!-- /.col-md-6 -->
+
+      <div class="col-md-6">
+        <div class="panel panel-default">
+          <div class="panel-heading"><b>Latest Updates</b></div>
+
+          <table class="table">
+	    <tbody>
+	      <tr><td><b>01 October 2024:</b> Workshop Proposal Accepted</td></tr>
+	      <tr><td><b>14 November 2024:</b> Workshop Webpage and CFP posted</td></tr>
+<!--
+	      <tr><td><b>25 January 2023:</b> Program Available</td></tr>
+	      <tr><td><b>05 February 2023:</b> Huawei Sponsorship</td></tr>
+-->
+            </tbody>
+          </table>
+        </div> <!-- /.panel -->
+      </div> <!-- /.col-md-6 -->
+    </div> <!-- /.row -->
+<!--
+    Sponsor:<br>
+
+    <img src="img/Huawei_logo.png" alt="Huawei" width="22%">
+-->
+</section>
+    
